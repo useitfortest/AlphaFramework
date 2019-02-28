@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+<video id="myVideo" controls="controls" autoplay="autoplay" name="media">
+    <source src="https://bitdash-a.akamaihd.net/content/sintel/Sintel.mp4" type="video/mp4">
+    Sorry, your browser does not support embedded videos.
+</video>
+<head>
+    <script type="text/javascript" src="../js/Common.js"></script>
+    <script type="text/javascript" src="../js/Playback.js"></script>
+    <script type="text/javascript" src="../js/Pause.js"></script>
+    <script type="text/javascript" src="../js/AudioVolume.js"></script>
+    <script type="text/javascript" src="../js/Mute.js"></script>
+    <script type="text/javascript" src="../js/Seeking.js"></script>
+    <style>
+table, th, td {
+  border: 1px solid black;
+}
+    </style>
+</head>
+<br>
+<table id="Tests" style="width:40%">
+    <tr>
+        <th>Number</th>
+        <th>Scenario</th>
+        <th>Run Test</th>
+        <th>Input Value</th>
+        <th>Result</th>
+        <th>Error</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Is playing?</td>
+        <td><input type="button" value="Run Test" title="Is the video playing?" onclick="runPlaybackTest()"></td>
+        <td></td>
+        <td id="playbackResult"></td>
+        <td id="playbackError"></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Pause</td>
+        <td><input type="button" value="Run Test" title="Does pause work?" onclick="runPauseTest()"></td>
+        <td><input id="pauseValue" type="text" title="Max available delay before pausing the video (seconds)." value="3"></td>
+        <td id="pauseResult"></td>
+        <td id="pauseError"></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Mute/Unmute</td>
+        <td><input type="button" value="Run Test" title="Is it possible to mute or unmute the video?" onclick="runMuteTest()"></td>
+        <td><input id="muteValue" type="text" title="Set 1 to mute, 0 to unmute" value="1"></td>
+        <td id="muteResult"></td>
+        <td id="muteError"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Seeking</td>
+        <td><input type="button" value="Run Test" title="Seeiking to a specific position" onclick="runSeekingTest()"></td>
+        <td><input id="seekingValue" type="text" title="Set integer value in seconds" value="17"></td>
+        <td id="seekingResult"></td>
+        <td id="seekingError"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Change audio volume</td>
+        <td><input type="button" value="Run Test" title="Does changing the volume work?" onclick="runVolumeTest()"></td>
+        <td><input id="volumeValue" type="text" title="Acceptable values are double values between 0 & 1." value="0.9"></td>
+        <td id="volumeResult"></td>
+        <td id="volumeError"></td>
+    </tr>
+</table>
+<label id="handledErrors"></label>
+</body>
+</html>
