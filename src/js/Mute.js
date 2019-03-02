@@ -7,7 +7,7 @@ function runMuteTest(){
     var isExecuted = false;
     var muted = parseInt(document.getElementById(value_id).value.trim(),10);
     var local_error_text = "<pre>Mute value is not applied.";
-    var isMuteUpdated = false;
+    //var isMuteUpdated = false;
     var isMuted = NaN;
     if (muted == 0) {
         isMuted = false;
@@ -53,15 +53,13 @@ function runMuteTest(){
         }
         player.muted = isMuted;
         error_text = local_error_text;
-        isMuteUpdated = true;
+        //isMuteUpdated = true;
     } catch (e) {
         error_text = error_text + "<pre>" +local_error_text;
         throw error_text;
     } finally {
         //Update result
-        if (!isMuteUpdated) { //We don't need to fire in case of seeking manually
-            setResult();
-        }
+        setResult();
     }
 
 }
