@@ -18,8 +18,7 @@ function runSeekingTest(){
     //Function to set result for this test case
     function setResult() {
         isExecuted = true;
-
-        if (player.currentTime == desiredTime) {
+        if (parseInt(player.currentTime) == desiredTime) {
             document.getElementById(result_id).innerHTML = test_passed;
             document.getElementById(error_id).innerHTML = "";
         } else {
